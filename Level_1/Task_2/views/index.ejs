@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+    body {
+    font-family: 'Lora';
+    margin: 0;
+    padding: 0;
+    background-image: url("https://blog.pint.com/wp-content/uploads/2013/02/great_examples_of_web_form_design_and_validation.jpg");
+    background-size: 147%; /* Ensure the background image covers the entire webpage */
+    /*background-position: center; /* Center the background image */
+    /* background-color: #f5f5f5; /* Background color */
+    }
+
+    h1 {
+    text-align: center;
+    color: #333333; /* Heading color */
+    margin-top: 50px; /* Margin top */
+    }
+
+    form {
+    color: thistle;
+    width: 50%;
+    margin: 0 auto;
+    background-color: #5b006b; /* Form background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(241, 238, 238, 0); /* Box shadow */
+    }
+
+    label,
+    input,
+    button {
+    display: block;
+    margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+    width: calc(100% - 16px); /* Adjust input width to consider padding */
+    padding: 8px;
+    border: 1px solid #dddddd; /* Input border */
+    border-radius: 5px; /* Input border radius */
+    }
+
+    button {
+    width: 100%; /* Make button full width */
+    font-weight: bold;
+    padding: 10px;
+    background-color: #01edc5; /* Button background color */
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Button border radius */
+    }
+
+    button:hover {
+    background-color: #45a049; /* Button hover background color */
+    }
+
+    .error-message {
+    color: red; /* Error message color */
+    display: none; /* Initially hide error messages */
+    margin-top: 5px; /* Margin top for error messages */
+    }
+    </style>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form id="validationForm" action="/submit" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <div id="nameError" style="color: red; display: none;">Please enter a valid name</div>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div id="emailError" style="color: red; display: none;">Please enter a valid email</div>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Client-side form validation
+        document.getElementById('validationForm').addEventListener('submit', function(event) {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+
+            if (!nameInput.value.trim()) {
+                nameError.style.display = 'block';
+                event.preventDefault(); // Prevent form submission
+            } else {
+                nameError.style.display = 'none';
+            }
+
+            if (!emailInput.value.trim() || !validateEmail(emailInput.value)) {
+                emailError.style.display = 'block';
+                event.preventDefault(); // Prevent form submission
+            } else {
+                emailError.style.display = 'none';
+            }
+        });
+
+        // Email validation function
+        function validateEmail(email) {
+            const re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>

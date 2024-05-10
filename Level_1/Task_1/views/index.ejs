@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif; /* Specify font family */
+            margin: 0;
+            padding: 0;
+            background-color: #616161; /* Change background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Styling for the form container */
+        .form-container {
+            background-color: #fcff61dc; /* Change box background color */
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+            padding: 20px;
+            width: 50%;
+        }
+
+        /* Styling for headings */
+        h1 {
+            text-align: center;
+            color: #000000; /* Change heading color */
+        }
+
+        /* Styling for form */
+        form {
+            margin-top: 20px; /* Add margin to the top */
+        }
+
+        /* Styling for labels, inputs, and button */
+        label,
+        input,
+        button {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling for text and email inputs */
+        input[type="text"],
+        input[type="email"] {
+            width: calc(100% - 16px); /* Adjust input width to consider padding */
+            padding: 8px;
+        }
+
+        /* Styling for buttons */
+        button {
+            width: 100%; /* Make button full width */
+            padding: 10px;
+            background-color: #0c0c0c; /* Change button color */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Styling for button hover */
+        button:hover {
+            background-color: #0b0b0b; /* Change button hover color */
+        }
+    </style>
+</head>
+<body>
+    <!-- Form container -->
+    <div class="form-container">
+        <!-- Form title -->
+        <h1>Form Submission</h1>
+        <!-- Form -->
+        <form action="/submit" method="POST">
+            <!-- Name input field -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <!-- Email input field -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <!-- Submit button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
