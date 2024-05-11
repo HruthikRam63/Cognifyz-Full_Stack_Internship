@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PizzaBot</title>
+    <style>
+    /* Global Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://media.istockphoto.com/id/1360266685/vector/night-sky-realistic-starry-cosmos-texture-magic-glowing-galaxy-with-bright-stars-shining.jpg?s=612x612&w=0&k=20&c=Mn37BXxJIohIeJENLCdJnOmpRPY1Ud2FgH9eOadkMHg=");
+        background-size: cover;
+        /*background-color: #ffe6e6; /* Light pink background */
+    }
+
+    .outermost-container {
+        background-image: url("https://media.istockphoto.com/id/1360266685/vector/night-sky-realistic-starry-cosmos-texture-magic-glowing-galaxy-with-bright-stars-shining.jpg?s=612x612&w=0&k=20&c=Mn37BXxJIohIeJENLCdJnOmpRPY1Ud2FgH9eOadkMHg=");
+        background-size: cover;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .menu {
+        background-image: url("https://media.istockphoto.com/id/1360266685/vector/night-sky-realistic-starry-cosmos-texture-magic-glowing-galaxy-with-bright-stars-shining.jpg?s=612x612&w=0&k=20&c=Mn37BXxJIohIeJENLCdJnOmpRPY1Ud2FgH9eOadkMHg=");
+        background-size: cover;
+        color: #ffffff;
+        font-family: 'Times New Roman';
+        font-style: italic;
+        font-weight: bold;
+        width: 30%;
+        /*background-color: #ccffcc; /* Light green background */
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .main-box {
+        color: #ffffff;
+        width: 65%;
+        background-image: url("https://media.istockphoto.com/id/1360266685/vector/night-sky-realistic-starry-cosmos-texture-magic-glowing-galaxy-with-bright-stars-shining.jpg?s=612x612&w=0&k=20&c=Mn37BXxJIohIeJENLCdJnOmpRPY1Ud2FgH9eOadkMHg=");
+        background-size: cover;
+        /*background-color: #ffffcc; /* Light yellow background */
+        padding: 30px;
+        align-items: center;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .first {
+        text-align: center;
+    }
+
+    .pizza-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .pizza-item {
+        background-color: #ffcccc; /* Light red background */
+        color: #272626;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .pizza-item:hover {
+        background-color: #99dfff; /* Lighter red background on hover */
+    }
+
+    .chat-history {
+        background-color: #ffffff; /* White background */
+        border: 2px solid #000000; /* Black border */
+        color: #000000;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .btnclass {
+        text-align: center;
+    }
+
+    .history {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .history3 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .outermost-container {
+            flex-direction: column;
+        }
+
+        .menu, .main-box {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+<div class="outermost-container">
+    <div class="menu">
+        <h2>Menu</h2>
+        <ul class="pizza-list">
+            <li class="pizza-item">Margherita</li>
+            <li class="pizza-item">Pepperoni</li>
+            <li class="pizza-item">Vegetarian</li>
+            <li class="pizza-item">Meat Lover's</li>
+            <li class="pizza-item">BBQ Chicken</li>
+            <li class="pizza-item">Supreme</li>
+            <li class="pizza-item">Mushroom</li>
+            <li class="pizza-item">Buffalo Chicken</li>
+            <li class="pizza-item">White Pizza</li>
+            <li class="pizza-item">Four Cheese</li>
+            <li class="pizza-item">Artichoke</li>
+            <li class="pizza-item">Spinach Alfredo</li>
+            <li class="pizza-item">Barbecue Bacon</li>
+            <li class="pizza-item">Chicken Alfredo</li>
+            <li class="pizza-item">Taco Pizza</li>
+            <li class="pizza-item">Buffalo Ranch Chicken</li>
+        </ul>
+    </div>
+    <div class="main-box">
+        <div class="first">
+            <h1>Welcome to PizzaBot</h1>
+            <p>How can I assist you today?</p>
+        </div>
+
+        <div class="third">
+            <input type="text" id="chat-input" placeholder="Type your message here...">
+            <button id="send-btn">Send</button>
+        </div>
+
+        <div class="chat-history">
+            <div class="btnclass">
+                <button id="chat-btn">Start Chat</button>
+            </div>
+            <div class="history">
+                <!-- Chat history will be displayed here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script defer>
+    document.addEventListener("DOMContentLoaded", function() {
+    const chatBtn = document.getElementById('chat-btn');
+    const chatInput = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-btn');
+    const historyContainer = document.querySelector('.history');
+
+    chatBtn.addEventListener('click', function() {
+        // Simulate a chat response
+        addMessageToHistory('PizzaBot', 'Hello! Welcome to PizzaBot. How can I assist you today?');
+    });
+
+    sendBtn.addEventListener('click', function() {
+        const message = chatInput.value.trim();
+
+        if (message !== '') {
+            // Simulate sending the message
+            addMessageToHistory('You', message);
+            
+            // Simulate receiving a response
+            addMessageToHistory('PizzaBot', 'Your order is placed', true);
+        }
+    });
+
+    function addMessageToHistory(sender, message, isResponse = false) {
+        const newMessage = document.createElement('div');
+        newMessage.classList.add('message');
+        if (isResponse) {
+            newMessage.classList.add('response');
+        }
+        newMessage.innerHTML = `<strong>${sender}: </strong>${message}`;
+        historyContainer.appendChild(newMessage);
+        historyContainer.scrollTop = historyContainer.scrollHeight;
+    }
+});
+</script>
+</body>
+</html>
