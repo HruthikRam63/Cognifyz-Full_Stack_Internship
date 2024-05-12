@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PizzaBot</title>
+    <link rel="stylesheet" href="task_3.css">
+   </head>
+<body>
+
+<div class="outermost-container">
+    <div class="menu">
+        <h2>Menu</h2>
+        <ul class="pizza-list">
+            <li class="pizza-item">Margherita</li>
+            <li class="pizza-item">Pepperoni</li>
+            <li class="pizza-item">Vegetarian</li>
+            <li class="pizza-item">Meat Lover's</li>
+            <li class="pizza-item">BBQ Chicken</li>
+            <li class="pizza-item">Supreme</li>
+            <li class="pizza-item">Mushroom</li>
+            <li class="pizza-item">Buffalo Chicken</li>
+            <li class="pizza-item">White Pizza</li>
+            <li class="pizza-item">Four Cheese</li>
+            <li class="pizza-item">Artichoke</li>
+            <li class="pizza-item">Spinach Alfredo</li>
+            <li class="pizza-item">Barbecue Bacon</li>
+            <li class="pizza-item">Chicken Alfredo</li>
+            <li class="pizza-item">Taco Pizza</li>
+            <li class="pizza-item">Buffalo Ranch Chicken</li>
+        </ul>
+    </div>
+    <div class="main-box">
+        <div class="first">
+            <h1>Welcome to PizzaBot</h1>
+            <p>How can I assist you today?</p>
+        </div>
+
+        <div class="third">
+            <input type="text" id="chat-input" placeholder="Type your message here...">
+            <button id="send-btn">Send</button>
+        </div>
+
+        <div class="chat-history">
+            <div class="btnclass">
+                <button id="chat-btn">Start Chat</button>
+            </div>
+            <div class="history">
+                <!-- Chat history will be displayed here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script defer>
+    document.addEventListener("DOMContentLoaded", function() {
+    const chatBtn = document.getElementById('chat-btn');
+    const chatInput = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-btn');
+    const historyContainer = document.querySelector('.history');
+
+    chatBtn.addEventListener('click', function() {
+        // Simulate a chat response
+        addMessageToHistory('PizzaBot', 'Hello! Welcome to PizzaBot. How can I assist you today?');
+    });
+
+    sendBtn.addEventListener('click', function() {
+        const message = chatInput.value.trim();
+
+        if (message !== '') {
+            // Simulate sending the message
+            addMessageToHistory('You', message);
+            
+            // Simulate receiving a response
+            addMessageToHistory('PizzaBot', 'Your order is placed', true);
+        }
+    });
+
+    function addMessageToHistory(sender, message, isResponse = false) {
+        const newMessage = document.createElement('div');
+        newMessage.classList.add('message');
+        if (isResponse) {
+            newMessage.classList.add('response');
+        }
+        newMessage.innerHTML = `<strong>${sender}: </strong>${message}`;
+        historyContainer.appendChild(newMessage);
+        historyContainer.scrollTop = historyContainer.scrollHeight;
+    }
+});
+</script>
+</body>
+</html>

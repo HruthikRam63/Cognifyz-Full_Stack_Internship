@@ -1,0 +1,103 @@
+ /* Global Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://media.istockphoto.com/id/1360266685/vector/night-sky-realistic-starry-cosmos-texture-magic-glowing-galaxy-with-bright-stars-shining.jpg?s=612x612&w=0&k=20&c=Mn37BXxJIohIeJENLCdJnOmpRPY1Ud2FgH9eOadkMHg=");
+        background-size: cover;
+        /*background-color: #ffe6e6; /* Light pink background */
+    }
+
+    .outermost-container {
+        background-image: url("https://media.istockphoto.com/id/1360266685/vector/night-sky-realistic-starry-cosmos-texture-magic-glowing-galaxy-with-bright-stars-shining.jpg?s=612x612&w=0&k=20&c=Mn37BXxJIohIeJENLCdJnOmpRPY1Ud2FgH9eOadkMHg=");
+        background-size: cover;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .menu {
+        background-image: url("https://media.istockphoto.com/id/1360266685/vector/night-sky-realistic-starry-cosmos-texture-magic-glowing-galaxy-with-bright-stars-shining.jpg?s=612x612&w=0&k=20&c=Mn37BXxJIohIeJENLCdJnOmpRPY1Ud2FgH9eOadkMHg=");
+        background-size: cover;
+        color: #ffffff;
+        font-family: 'Times New Roman';
+        font-style: italic;
+        font-weight: bold;
+        width: 30%;
+        /*background-color: #ccffcc; /* Light green background */
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .main-box {
+        color: #ffffff;
+        width: 65%;
+        background-image: url("https://media.istockphoto.com/id/1360266685/vector/night-sky-realistic-starry-cosmos-texture-magic-glowing-galaxy-with-bright-stars-shining.jpg?s=612x612&w=0&k=20&c=Mn37BXxJIohIeJENLCdJnOmpRPY1Ud2FgH9eOadkMHg=");
+        background-size: cover;
+        /*background-color: #ffffcc; /* Light yellow background */
+        padding: 30px;
+        align-items: center;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .first {
+        text-align: center;
+    }
+
+    .pizza-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .pizza-item {
+        background-color: #ffcccc; /* Light red background */
+        color: #272626;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .pizza-item:hover {
+        background-color: #99dfff; /* Lighter red background on hover */
+    }
+
+    .chat-history {
+        background-color: #ffffff; /* White background */
+        border: 2px solid #000000; /* Black border */
+        color: #000000;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .btnclass {
+        text-align: center;
+    }
+
+    .history {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .history3 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .outermost-container {
+            flex-direction: column;
+        }
+
+        .menu, .main-box {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
