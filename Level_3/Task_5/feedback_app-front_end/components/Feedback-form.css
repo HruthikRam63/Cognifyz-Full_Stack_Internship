@@ -1,0 +1,106 @@
+/* Container for the feedback form */
+.feedback-form-container {
+    max-width: 600px; /* Maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    margin-top: 50px; /* Top margin for spacing */
+    padding: 20px; /* Padding inside the container */
+    background-color: #f9f9f9; /* Background color for the container */
+    border: 1px solid #ddd; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Styling for the form inside the container */
+.feedback-form-container form {
+    margin-right: 20px; /* Right margin for spacing */
+}
+
+/* Container for the logo */
+.logo-container {
+    text-align: center; /* Center align the logo */
+    margin-bottom: 20px; /* Bottom margin for spacing */
+}
+
+/* Styling for the logo image */
+.logo-image {
+    max-width: 150px; /* Maximum width for the logo image */
+}
+
+/* Styling for input and textarea elements in the form */
+.feedback-form-container input,
+.feedback-form-container textarea {
+    width: 100%; /* Full width for input and textarea */
+    padding: 10px; /* Padding inside input and textarea */
+    margin-bottom: 10px; /* Bottom margin for spacing */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Styling for the submit button */
+.feedback-form-container button {
+    padding: 10px 20px; /* Padding for button */
+    background-color: #007bff; /* Background color for button */
+    color: #fff; /* Text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+}
+
+/* Styling for disabled submit button */
+.feedback-form-container button:disabled {
+    opacity: 0.7; /* Reduced opacity for disabled button */
+    cursor: not-allowed; /* Disabled cursor */
+}
+
+/* Styling for success message container */
+.submitted-message,
+.error-message {
+    margin-top: 20px; /* Top margin for spacing */
+    padding: 10px; /* Padding for the message */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Styling for success message */
+.submitted-message {
+    background-color: #d4edda; /* Background color */
+    border: 1px solid #c3e6cb; /* Border style */
+}
+
+/* Styling for paragraphs inside success message */
+.submitted-message p {
+    margin: 0; /* Remove default margin */
+    color: #155724; /* Text color */
+}
+
+/* Styling for button inside success message */
+.submitted-message button {
+    margin-top: 10px; /* Top margin for spacing */
+    padding: 5px 10px; /* Padding for button */
+    background-color: #155724; /* Background color for button */
+    color: #fff; /* Text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+}
+
+/* Styling for error message */
+.error-message {
+    background-color: #f8d7da; /* Background color */
+    border: 1px solid #f5c6cb; /* Border style */
+}
+
+/* Styling for paragraphs inside error message */
+.error-message p {
+    margin: 0; /* Remove default margin */
+    color: #721c24; /* Text color */
+}
+
+/* Styling for button inside error message */
+.error-message button {
+    margin-top: 10px; /* Top margin for spacing */
+    padding: 5px 10px; /* Padding for button */
+    background-color: #721c24; /* Background color for button */
+    color: #fff; /* Text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+}
